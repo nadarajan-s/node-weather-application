@@ -9,7 +9,7 @@ weatherForm.addEventListener('submit',(e) => {
     e.preventDefault()
     console.log('user defined location',search.value)
     messageOne.textContent = 'Fetching weather information. please hold on !! '
-     fetch('http://localhost:3000/weather?address='+search.value).then((response)=>{
+     fetch('/weather?address='+search.value).then((response)=>{
          response.json().then(data => {
             if (data.error){
                 messageOne.textContent = 'Error fetching the data.'
